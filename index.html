@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pentester Web - Check List</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 5px solid #ededed;
+            background-color: #fbfbfb;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 5px solid #ededed;
+            background-color: #fbfbfb;
+            text-align: center;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section h2 {
+            margin: 0;
+            padding: 10px 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 5px 0;
+            background-color: #f1f1f1;
+        }
+
+        .item-label {
+            flex: 2;
+            margin-right: 10px;
+
+        }
+
+        .item-checkbox {
+            flex: 1;
+            text-align: center;
+        }
+
+        .item-textarea {
+            flex: 3;
+            min-height: 50px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        * {
+            font-family: system-ui;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Pentester Web - Check List</h1>
+    <form id="optionsForm">
+        <!-- Seção Recon -->
+        <div class="section">
+            <h2>Recon</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>visualisar</th>
+                        <th>Sequência de Testes</th>
+                        <th>Resumo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option1Show>
+                            </label>
+                        </td>
+                        <td>1 - Identificar servidor Web e tecnologias</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option2Show>
+                            </label>
+                        </td>
+                        <td>2 - Enumeração de subdomínios</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option3Show>
+                            </label>
+                        </td>
+                        <td>3 - Enumeração de diretórios</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option4Show>
+                            </label>
+                        </td>
+                        <td>4 - Enumeração de parametos</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option5Show>
+                            </label>
+                        </td>
+                        <td>5 - Enumeração de variaveis</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option6Show>
+                            </label>
+                        </td>
+                        <td>6 - Encontrar ids vazados, e-mails (pwndb)</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option7Show>
+                            </label>
+                        </td>
+                        <td>7 - Identificar o WAF</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option8Show>
+                            </label>
+                        </td>
+                        <td>8 - Rastreie todo o site em busca de palavras-chave interessantes como senha, token, etc
+                        </td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option9Show>
+                            </label>
+                        </td>
+                        <td>9 - Testar parâmetros de depuração</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option10Show>
+                            </label>
+                        </td>
+                        <td>10 - Faça pesquisa utilziando o Censys.io</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option11Show>
+                            </label>
+                        </td>
+                        <td>11 - Tente localizar /robots.txt /crossdomain.xml /clientaccesspolicy.xml /phpinfo.php
+                            /sitemap.xml</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option12Show>
+                            </label>
+                        </td>
+                        <td>12 - Revisar comentários sobre o código-fonte</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option13Show>
+                            </label>
+                        </td>
+                        <td>13 - Verificar .git nos diretorios localizadas</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option14Show>
+                            </label>
+                        </td>
+                        <td>14 - Verificar Shodan</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option15Show>
+                            </label>
+                        </td>
+                        <td>15 - Google dorking</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option16Show>
+                            </label>
+                        </td>
+                        <td>16 - Verifique waybackurls (gau e waybackurls)</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option17Show>
+                            </label>
+                        </td>
+                        <td>17 - Verifique portas e serviços ativos.</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option18Show>
+                            </label>
+                        </td>
+                        <td>18 - Verifique https://crt.sh/?q=%25.dominio</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option19Show>
+                            </label>
+                        </td>
+                        <td>19 - Procure por dados no github</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option20Show>
+                            </label>
+                        </td>
+                        <td>20 - Identificar quais são os métodos utilizados</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option21Show>
+                            </label>
+                        </td>
+                        <td>21 - Procure informaçoes redes sociais facebook, instagram, linkedin, trello</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option22Show>
+                            </label>
+                        </td>
+                        <td>21 - Pesquisa DNS, A , CNAME, NS</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option23Show>
+                            </label>
+                        </td>
+                        <td>22 - Pesquisa DNS reverso</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option24Show>
+                            </label>
+                        </td>
+                        <td>23 - Verifique como o aplicativo está lidando com erros 4xx & 5xx</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option25Show>
+                            </label>
+                        </td>
+                        <td>24 - Verifique o privilégio necessário para executar</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option26Show>
+                            </label>
+                        </td>
+                        <td>25 - Verificar se há informações confidenciais no console do navegador</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option27Show>
+                            </label>
+                        </td>
+                        <td>26 - Verificar as bibliotecas json que estão sendo utilizadas</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option28Show>
+                            </label>
+                        </td>
+                        <td>27 - Verificar e analisar os arquivos json</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option29Show>
+                            </label>
+                        </td>
+                        <td>28 - Identificar o serviço de nuvem AWS, Google Cloud, Azure</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class=center>
+                            <label>
+                                <input type=checkbox name=option30Show>
+                            </label>
+                        </td>
+                        <td>29 - Utilize o nuclei atras de vulnerabilidades conhecidas</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+
+
+
+
+
+
+
+                </tbody>
+                <!-- Repita as linhas para outras opções da seção Recon -->
+            </table>
+        </div>
+
+        <!-- Seção Outra Seção -->
+        <div class="section">
+            <h2>Outra Seção</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>visualisar</th>
+                        <th>Sequência de Testes</th>
+                        <th>Resumo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label>
+                                <input type=checkbox name=option30Show>
+                            </label>
+                        </td>
+                        <td>29 - Utilize o nuclei atras de vulnerabilidades conhecidas</td>
+                        <td><textarea name=option1Text placeholder=Resumo da vulne></textarea></td>
+                    </tr>
+
+
+
+
+
+                </tbody>
+                <!-- Repita as linhas para outras opções da seção Outra Seção -->
+            </table>
+        </div>
+
+        <br>
+        <!-- Gerar o PDF -->
+        <br>
+        <button type="button" onclick="generatePDF()">Gerar PDF</button>
+    </form>
+
+    <script>
+        const MAX_CHARACTERS_PER_LINE = 100; // Aproximadamente para formato A4
+        function generatePDF() {
+            const form = document.getElementById("optionsForm");
+            const sections = form.getElementsByClassName("section");
+            const selectedSections = [];
+
+            for (let i = 0; i < sections.length; i++) {
+                const section = sections[i];
+                const sectionTitle = section.querySelector('h2').textContent.trim();
+                const optionCheckbox = section.querySelector('input[name$="Show"]');
+
+                if (optionCheckbox.checked) {
+                    selectedSections.push({
+                        title: sectionTitle,
+                        content: generateSectionContent(section)
+                    });
+                }
+            }
+
+            if (selectedSections.length === 0) {
+                alert("Nenhuma seção selecionada para gerar o PDF.");
+                return;
+            }
+
+            const htmlContent = `
+                <html>
+                <head>
+                    <title>Relatório</title>
+                    <meta charset="UTF-8">
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            margin: 0;
+                            padding: 20px;
+                        }
+
+                        h1 {
+                            font-size: 24px;
+                            margin-bottom: 20px;
+                        }
+
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                        }
+
+                        th, td {
+                            border: 1px solid black;
+                            padding: 5px;
+                        }
+
+                        .section {
+                            margin-bottom: 20px;
+                        }
+
+                        .center {
+                            text-align: center;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Pentester Web - Check List</h1>
+                    
+                    ${generateSections(selectedSections)}
+                </body>
+                </html>
+            `;
+
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+
+            const pdfWindow = window.open('', '_blank');
+            pdfWindow.document.open();
+            pdfWindow.document.write('<iframe width="100%" height="100%" src="' + url + '"></iframe>');
+            pdfWindow.document.close();
+        }
+
+        function generateSectionContent(section) {
+            const optionsTable = section.querySelector('table');
+            const rows = optionsTable.querySelectorAll('tr');
+            const sectionContent = [];
+
+            for (let i = 1; i < rows.length; i++) {
+                const columns = rows[i].querySelectorAll('td');
+                const showCheckbox = columns[0].querySelector('input');
+                const vulnerability = columns[1].textContent;
+                const summaryTextarea = columns[2].querySelector('textarea');
+                const summary = formatTextArea(summaryTextarea.value);
+
+                if (showCheckbox.checked) {
+                    sectionContent.push({
+                        vulnerability,
+                        summary
+                    });
+                }
+            }
+
+            return sectionContent;
+        }
+
+        function generateTableOfContents(sections) {
+            let toc = '<h2>Índice</h2><ul>';
+
+            sections.forEach((section, index) => {
+                toc += `<li><a href="#section${index}">${section.title}</a></li>`;
+            });
+
+            toc += '</ul>';
+            return toc;
+        }
+
+        function generateSections(sections) {
+            let sectionsHtml = '';
+
+            sections.forEach((section, index) => {
+                sectionsHtml += `
+                    <div class="section" id="section${index}">
+                        <h2>${section.title}</h2>
+                        <table>
+                            <tr>
+                                <th>Vulnerabilidades</th>
+                                <th>Resumo</th>
+                            </tr>
+                            ${generateSectionRows(section.content)}
+                        </table>
+                    </div>`;
+            });
+
+            return sectionsHtml;
+        }
+
+        function generateSectionRows(content) {
+            let rows = '';
+
+            content.forEach(option => {
+                rows += `
+                    <tr>
+                        <td>${option.vulnerability}</td>
+                        <td>${option.summary}</td>
+                    </tr>`;
+            });
+
+            return rows;
+        }
+        function formatTextArea(text) {
+            const lines = [];
+            let currentLine = '';
+
+            for (let i = 0; i < text.length; i++) {
+                if (currentLine.length >= MAX_CHARACTERS_PER_LINE || text[i] === '\n') {
+                    lines.push(currentLine);
+                    currentLine = '';
+                    if (text[i] === '\n') {
+                        continue;
+                    }
+                }
+
+                currentLine += text[i];
+            }
+
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+
+            return lines.join('<br>');
+        }
+    </script>
+</body>
+
+</html>
